@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SENTET</title>
+    <link rel="shortcut icon" type="image/png" href="{{url_for('static',filename='asset/Logo/app_logo_sentet_Imk_icon.ico')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='asset/CSS/utama.css') }}">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {% for js in list_js%}
+        {{ js | safe }}
+    {% endfor %}
+
+    <!--
+   
+    <link rel="shortcut icon" type="image/png" href="H:/Tambahan/Skripsi/SENTET-master/static/asset/Logo/app_logo_sentet_Imk_icon.ico"/>
+    <link rel="stylesheet" type="text/css" href="H:/Tambahan/Skripsi/SENTET-master/static/asset/CSS/utama.css">  
+    -->
+</head>
+<body>
+    <div class="navHeader">
+        <div class="container-flex">
+            <div class="item-l-12 item-m-12 item-s-12">
+                <ul class="navHeader-item">
+                    <li><a href="http://127.0.0.1:5000/documentation">Dokumentasi</a></li>
+                    <li><a class="active" href="http://127.0.0.1:5000/about">About</a></li>
+                    <li><a class="active" href="http://127.0.0.1:5000/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="top">
+        <!--<div class="coba"></div>-->
+
+        <div id="navbar">
+            <div class="container-flex">
+                <div class="item-s-1 item-m-1 item-l-1"></div>
+                <div class="item-s-4 item-m-10 item-l-10  bing-img" id="fl-4">
+                
+                    <div class="wrapPic" id="wr">
+                        <div class="search">
+                            
+                        <img src="{{url_for('static',filename='asset/Logo/about.png')}}" class="searchCenter" id="imgNavbar" >
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item-s-1 item-m-1 item-l-1 "></div>
+                
+            </div>    
+        </div>
+    </div>
+<!--==================MAIN CONTENT============================-->
+    <div class="container-flex">
+    <div class="item-s-1 item-m-1 item-l-1">
+
+        <div class="item" data-aos="slide-right"><h5>SENTIMEN ANALISIS TENTANG TWITTER (SENTET)</h5>
+        </div>
+
+        <div class="item" data-aos="slide-right">
+            <span style="text-align: center;">
+            <img src="{{url_for('static',filename='asset/about/me.png')}}" class="item-s-1 item-m-8 item-l-8" id="imgNavbar" >
+            </span>
+        </div>
+
+        <div class="item" data-aos="slide-right">
+           
+            <span style="text-align: center;">
+            4611416039
+            </span>
+            <span style="text-align: center;">
+            Nala Adina
+            </span>
+            <span style="text-align: center;">
+            <i class="fa fa-github"></i> Sastrogumilo
+            </span>
+        </div>
+
+        <div class="item" data-aos="slide-right">
+            <span style="text-align: center;">
+                Jurusan Ilmu Komputer
+            </span>
+            <span style="text-align: center;">
+                Fakultas Matematika dan Ilmu Pengetahuan Alam
+            </span>
+            <span style="text-align: center;">
+               Universitas Negeri Semarang
+            </span>
+            <span style="text-align: center;">
+                2020
+            </span>
+        </div>
+        
+            
+<!--=====================END MAIN===========================-->   
+    </div>
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js" type="text/javascript"></script>
+    <script>AOS.init();</script>
+
+    <script src="{{ url_for('static', filename='asset/JS/utama.js') }}" type="text/javascript"></script>
+</body>
+</html>

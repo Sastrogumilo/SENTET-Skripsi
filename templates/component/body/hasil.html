@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SENTET</title>
+    <link rel="shortcut icon" type="image/png" href="{{url_for('static',filename='asset/Logo/app_logo_sentet_Imk_icon.ico')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='asset/CSS/utama.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    {% for js in list_js%}
+        {{ js | safe }}
+    {% endfor %}
+
+
+</head>
+<body>
+
+    <div class="navHeader">
+        <div class="container-flex">
+            <div class="item-l-12 item-m-12 item-s-12">
+                <ul class="navHeader-item">
+                    <li><a href="http://127.0.0.1:5000/documentation">Dokumentasi</a></li>
+                    <li><a class="active" href="http://127.0.0.1:5000/about">About</a></li>
+                    <li><a class="active" href="http://127.0.0.1:5000/">Home</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="top">
+        <!--<div class="coba"></div>-->
+        <div class="header">
+            <div class="container-flex">
+                <div class="item-s-1 item-m-1 item-l-1 "></div>
+                <div class="item-s-4 item-m-2 item-l-4  bing-img" id="fl-4">
+                    <img src="{{url_for('static',filename='asset/Logo/SENTET_1.png')}}" class="img" id="img">
+                </div>
+                <div class="item-s-1 item-m-1 item-l-1"></div>
+            </div>
+        </div>
+        <div id="navbar">
+            <div class="container-flex">
+                <div class="item-s-1 item-m-1 item-l-1"></div>
+                <div class="item-s-10 item-m-10 item-l-10" id="fl-10">
+                
+                    <div class="wrap" id="wr">
+                        <div class="search">
+                            <form onsubmit="return submitSearch()" action="#" method="POST">
+                                    <input type="text" class="searchTerm" placeholder="{{cari}}" id="in" name="search">
+                                    <button type="submit" class="searchButton" id="sb">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-s-1 item-m-1 item-l-1"></div>
+            </div>    
+        </div>
+    </div>
+    <div>Pencaharian Hashtag : {{cari}}</div>
+    <div>Total Tweet : {{hitung_tweet}}</div>
+    <a href="/Download/", target="blank",>
+        <button class="fa fa-download" id="sb">
+            Download Dataset
+        </button>
+    </a>
+    
+    <div class="content" id="content">
+        <!--SENTIMENT-->
+        <div class="container-flex">
+            <div class="item-s-12 item-m-10 item-l-3">
+                <img src="{{url_for('static',filename='asset/sentiment/sentiment.png')}}" class="sentimen">
+                <p><b>Sentiment Analysis Tags</b></p>
+            </div>
+        </div>
+
+            <!--HASHTAGS-->
+        <div class="container-flex">
+            <div class="item-s-12 item-m-8 item-l-8">
+                <img src="{{url_for('static',filename='asset/hashtags/hashtags.png')}}" class="hashtags">
+                <p><b>Sentiment Analysis Hashtag</b></p>
+            </div>
+        </div>
+
+
+        <div>
+            <div>
+            <div style="align-content: center;">  {{div_placeholder}} </div>
+                <p><b>Histogram Panjang Tweet</b></p>
+            </div>
+             
+            
+        </div>
+
+            <!--WORDCLOUD-->
+        <!--div class="container-flex"> -->
+        <div class="container-flex">
+            <div class="item-s-12 item-m-12 item-l-12">
+                <img src="{{url_for('static',filename='asset/wordcloud/WordCloud.png')}}" class="wordcloud">
+                <p><b>Wordcloud Hastag </b></p>
+                </div>
+            </div>
+    
+        <div class="container-flex">
+            <div class="item-s-1 item-m-1 item-l-1">
+                <div id="coeg"></div>
+                <p><b>Network Hastag </b></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='asset/JS/utama.js') }}" type="text/javascript"></script>
+    <!-- D3.js
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    -->
+    <!-- Plotly.js -->
+
+
+
+
+</body>
+
+</html>

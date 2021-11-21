@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SENTET</title>
+    
+    <link rel="shortcut icon" type="image/png" href="{{url_for('static',filename='asset/Logo/app_logo_sentet_Imk_icon.ico')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='asset/CSS/utama.css') }}">
+    
+    <!--
+    <link rel="shortcut icon" type="image/png" href="H:/Tambahan/Skripsi/SENTET-master/static/asset/Logo/app_logo_sentet_Imk_icon.ico"/>
+    <link rel="stylesheet" type="text/css" href="H:/Tambahan/Skripsi/SENTET-master/static/asset/CSS/utama.css">
+    -->
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+    {% for js in list_js%}
+        {{ js | safe }}
+    {% endfor %}
+
+</head>
+
+<body>
+    <div class="navHeader">
+        <div class="container-flex">
+            <div class="item-l-12 item-m-12 item-s-12">
+                <ul class="navHeader-item">
+                    <li><a href="http://127.0.0.1:5000/documentation">Dokumentasi</a></li>
+                    <li><a class="active" href="http://127.0.0.1:5000/about">About</a></li>
+                    <li><a class="active" href="http://127.0.0.1:5000/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="top">
+        <!--<div class="coba"></div>-->
+
+        <div id="navbar">
+            <div class="container-flex">
+                <div class="item-s-1 item-m-1 item-l-1"></div>
+                <div class="item-s-4 item-m-10 item-l-10  bing-img" id="fl-4">
+                
+                    <div class="wrapPic" id="wr">
+                        <div class="search">
+                        <!---  
+                       
+
+                        <img src="H:/Tambahan/Skripsi/SENTET-master/static/asset/Logo/dokumentasi2.png" class="searchCenter" id="imgNavbar" >
+                        -->
+                        <img src="{{url_for('static',filename='asset/Logo/dokumentasi2.png')}}" class="searchCenter" id="imgNavbar" >
+                        
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item-s-1 item-m-1 item-l-1 "></div>
+                
+            </div>    
+        </div>
+    </div>
+<!--================= MAIN CONTENT ===========================-->
+
+<div class="container-flex">
+    <div class="item-s-1 item-m-1 item-l-1">
+
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right">SENTIMEN ANALISIS TENTANG TWITTER (SENTET)
+
+            </div>
+        </div>
+
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right"> 
+                
+                <span style="text-align: center">Program ini dibuat untuk melengkapi Skripsi</span>
+                <span style="text-align: center;">yang berjudul</span>
+                <span style="text-align: center;">
+                <b>SENTIMEN ANALISIS MULTI-LABEL PADA UJARAN KEBENCIAN DAN BAHASA KASAR 
+                    DI TWITTER INDONESIA MENGGUNAKAN PENDEKATAN DEEP LEARNING</b>
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right">
+                
+                <span>            
+                    SENTET adalah sebuah program yang berguna untuk 
+                    menganalisa sebuah kalimat di Twitter. 
+                    Kalimat akan di kelompokan menjadi 4 kriteria, yaitu: 
+                    Kategori Ujaran, Target Ujaran, Jenis Ujaran, dan Level Ujaran.
+                </span>
+                <h1></h1>
+                <span>
+                    Kategori Ujaran : Abusive (kata kasar), HS (ujaran kebencian), dan Normal
+                </span>
+                <span>
+                    Target Ujaran: Individu dan Kelompok
+                </span>
+                <span>
+                    Jenis Ujaran: Menyingung agama, menyingung ras, menyingung fisik, 
+                    menyingung gender dan menyingung jenis yang lain (other)
+                </span>
+                <span>
+                    Level Ujaran: Weak (lemah), Moderate (menengah), dan Strong (kuat)
+                </span>
+            </div>
+        </div>
+
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right">
+                <span>
+                    Model klasifikasi yang digunakan untuk program ini menggunakan LSTM 
+                    dengan Word2Vec. Model ini dipilih karena mendapatkan akurasi terbaik 
+                    berdasarkan hasil penelitian Skripsi ini.
+                </span>
+                <span>
+                    Model dilatih pada Google Colabboratory menggunakan library Python 
+                    berupa Tensorflow versi 2.0.0
+                </span>
+            </div>
+        </div>
+
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right">
+                <span>
+                    Hasil dari pelatihan dapat dilihat pada gambar berikut
+                </span>
+                <span>
+                    <img src="{{url_for('static',filename='asset/dokumentasi/graph.png')}}"  >
+                <!--
+                    
+                    <img src="H:/Tambahan/Skripsi/SENTET-master/static/asset/dokumentasi/graph.png"  >
+                -->
+                </span>
+                <h1></h1>
+            </div> 
+            <div class="item" data-aos="slide-right">         
+                <span>
+                    <img src="{{url_for('static',filename='asset/dokumentasi/graph_legend.png')}}"  >
+                    <!--
+                       
+                        <img src="H:/Tambahan/Skripsi/SENTET-master/static/asset/dokumentasi/graph_legend.png"  >
+                    -->
+                </span>
+                <h1></h1>
+                <span>
+                    Pada graf diatas model mendapatkan hasil terbesar yaitu, 91,56%.
+                </span>
+                <span>
+                    Tetapi model tersebut mengunakan metode evaluasi <i>Binary Akurasi</i>
+                </span>
+            </div>
+        </div>
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right">
+                <span>
+                    <img src="{{url_for('static',filename='asset/dokumentasi/cm.png')}}"   class="item-s-4 item-m-10 item-l-11  bing-img" id="img" >
+                    <!--
+                        
+                        <img src="H:/Tambahan/Skripsi/SENTET-master/static/asset/dokumentasi/cm.png" class="item-s-4 item-m-10 item-l-11  bing-img" id="img" >
+                    -->
+                </span>
+                <span>
+                    Dapat dilihat pada <i>confussion matrix</i>-nya, terdapat banyak 
+                    <i>True Negative</i> yang berakibatkan model mendapatkan hasil 
+                    binari akurasi yang tinggi
+                </span>       
+            </div>
+        </div>
+
+        <div class="container-flex">
+            <div class="item" data-aos="slide-right">
+                <span>Oleh sebab itu peneliti menggunakan metrik akurasi yang bernama <i>Hamming Score</i> atau yang disebut <i>label based accuracy</i>
+                sebagai evaluasi model.
+                </span>
+                <span>Yang memiliki rumus</span>
+            </div>
+            <div class="item" data-aos="slide-right">
+                <span style="text-align: center;">
+                    <img src="{{url_for('static',filename='asset/dokumentasi/akurasi.png')}}"  class="item-s-4 item-m-9 item-l-9  bing-img" id="img" >
+                <!--
+                    <img src="H:/Tambahan/Skripsi/SENTET-master/static/asset/dokumentasi/akurasi.png" class="item-s-4 item-m-9 item-l-9  bing-img" id="img" >
+                        
+                -->
+                
+                </span>
+            </div>
+            <div class="item" data-aos="slide-right">
+                <span>
+                    Untuk lebih jelasnya dapat melihat jurnal ElKafrawy et al., (2015) pada link 
+                    <a href="https://doi.org/10.5120/20083-1666"> berikut</a>.
+                </span>
+            </div>
+
+            <div class="item" data-aos="slide-right">
+                <span>
+                Hasil dari penelitian ini dapat dilihat pada gambar dibawah ini.
+                </span>
+                <img src="{{url_for('static',filename='asset/dokumentasi/metric.png')}}"  class="item-s-4 item-m-12 item-l-12  bing-img" id="img" >
+                <!--
+                    
+                    <img src="H:/Tambahan/Skripsi/SENTET-master/static/asset/dokumentasi/metric.png" class="item-s-4 item-m-12 item-l-12  bing-img" id="img" >
+                -->
+            </div>
+
+            <div class="item" data-aos="slide-right">
+                <span>
+                    Untuk melihat <i>source code</i> dari penelitian ini dapat melalui link
+                    <a href="https://drive.google.com/drive/folders/1IomyuSg-kocRoW519ijLxKX7vNsTx1Q9"> berikut</a>.
+                </span>
+                <span>
+                
+                    Yang bernama SENTET Main.ipynb, file tersebut berisikan pelatihan CNN dan LSTM secara lengkap beserta
+                    <i>Word2Vec</i> untuk pelatihan tersebut.
+                </span>
+                <span>
+                    Kemudian terdapat file Visualisasi.ipynb file tersebut berisikan visualisasi dataset.
+                </span>
+                <span> 
+                    Kedua file tersebut dapat langsung di buka pada Google Colaboratory.
+                </span>
+            </div>
+
+
+        </div>
+ 
+
+
+<!--======================END========================================-->
+    </div>
+</div>
+</div>
+
+  
+
+<script src="https://unpkg.com/aos@2.3.0/dist/aos.js" type="text/javascript"></script>
+<script>AOS.init();</script>
+
+<script src="{{ url_for('static', filename='asset/JS/utama.js') }}" type="text/javascript"></script>
+
+<!--
+
+<script src="H:/Tambahan/Skripsi/SENTET-master/static/asset/JS/utama.js" type="text/javascript"></script>
+-->
+</body>
+</html>
